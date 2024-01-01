@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PhyLaunch</string>
+    <string name="perms_notification">
+        PhyLaunch requires external storage access to display your wallpaper. Please consider granting this permission in your device settings.
+    </string>
+    <string name="ok">Acknowledged</string>
+</resources>

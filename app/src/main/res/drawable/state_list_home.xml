@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Background colours for homescreen, to let user know which app they currently have selected. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_focused="false">
+        <shape>
+            <solid android:color="#00FFFFFF"/>
+        </shape>
+    </item>
+
+    <item android:state_focused="true">
+        <shape>
+            <solid android:color="#80808080"/>
+        </shape>
+    </item>
+
+    <item> <!-- default -->
+        <shape>
+            <solid android:color="#80808080"/>
+        </shape>
+
+    </item>
+
+</selector>

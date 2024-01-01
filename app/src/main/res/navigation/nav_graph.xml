@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homePager">
+
+    <fragment
+        android:id="@+id/appDrawerFragment"
+        android:name="com.tehgan.phylaunch.ui.appdrawer.AppDrawerFragment"
+        android:label="fragment_appdrawer"
+        tools:layout="@layout/fragment_appdrawer" />
+    <fragment
+        android:id="@+id/homePager"
+        android:name="com.tehgan.phylaunch.ui.HomePager"
+        android:label="HomePager">
+        <action
+            android:id="@+id/action_homePager_to_appDrawerFragment"
+            app:destination="@id/appDrawerFragment"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/homePager"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+</navigation>

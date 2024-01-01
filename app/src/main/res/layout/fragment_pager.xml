@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_fallback">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 'Dot' page indicator -->
+    <com.tehgan.phylaunch.ui.Dots
+        android:id="@+id/dot_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:elevation="2dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/app_dock"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Dock -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/app_dock"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <include
+            android:id="@+id/dock_app1"
+            layout="@layout/app_cell"
+            android:layout_width="54dp"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            app:layout_constraintEnd_toStartOf="@+id/dock_app2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <include
+            android:id="@+id/dock_app2"
+            layout="@layout/app_cell"
+            android:layout_width="54dp"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            app:layout_constraintEnd_toStartOf="@+id/app_drawer_btn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/dock_app1" />
+
+        <ImageView
+            android:id="@+id/app_drawer_btn"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:focusable="true"
+            android:importantForAccessibility="no"
+            android:src="@drawable/baseline_apps_24"
+            android:background="@drawable/state_list_home"
+            app:layout_constraintEnd_toStartOf="@+id/dock_app3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/dock_app2" />
+
+        <include
+            android:id="@+id/dock_app3"
+            layout="@layout/app_cell"
+            android:layout_width="54dp"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            app:layout_constraintEnd_toStartOf="@+id/dock_app4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/app_drawer_btn" />
+
+        <include
+            android:id="@+id/dock_app4"
+            layout="@layout/app_cell"
+            android:layout_width="54dp"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/dock_app3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
